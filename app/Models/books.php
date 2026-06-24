@@ -10,7 +10,15 @@ class books extends Model
         'title',
         'author',
         'writer',
-        ''
+        'relasee_data'
 
     ];
+
+    public function category(){
+        return $this -> belongsTo(Category);
+    }
+
+    public function borrow(){
+        return $this -> hasMany(borrows::class);
+    }
 }
