@@ -13,4 +13,22 @@ class borrows extends Model
         'date_end',
 
     ];
+
+    public function casts(){
+        return [
+            'data_start' => 'data',
+            'data_end' => 'data'
+        ];
+    }
+
+    public function user(){
+        return $this -> belongsTo (User::class);
+    }
+
+    public function books(){
+        return $this -> belongsTo (books::class);
+
+    }
+
+
 }
